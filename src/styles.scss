@@ -1,6 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
+@use "media-queries.scss" as *;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,9 +13,8 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-// below creates a primary palette with three shades of blue
-$ngeddit-primary: mat.define-palette(mat.$gray-palette, 100, 50, 200);
-$ngeddit-accent: mat.define-palette(mat.$red-palette, A200, A100, A400);
+$ngeddit-primary: mat.define-palette(mat.$deep-purple-palette);
+$ngeddit-accent: mat.define-palette(mat.$red-palette);
 
 // The warn palette is optional (defaults to red).
 $ngeddit-warn: mat.define-palette(mat.$red-palette);
@@ -36,6 +36,7 @@ $ngeddit-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($ngeddit-theme);
 
+$primary: map-get($ngeddit-primary, A400);
 /* You can add global styles to this file, and also import other style files */
 
 html,
